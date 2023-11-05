@@ -1,1 +1,6 @@
-console.log('And this is where the Javascript goes')
+$(document).ready(function() {
+
+  $("#test").click(function() {
+    alert("Clicked!!!");
+  });
+})
