@@ -6,49 +6,149 @@
 
 body {
   text-align: center;
+  color: orange;
+}
+
+.header-image-container {
+  position: relative;
+}
+
+.header-logo-container {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+.partner-portal-button {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  background-color: orange;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.in-partnership-container {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-weight: bold;
+}
+
+.partnership-svg-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .program-info-container {
   display: flex;
   flex-direction: column;
-  color: white;
   width: 100%;
-  height: 900px;
-  border: 1px solid black;
   background-color: black;
-  padding: 10px;
-  margin: 10px;  
+  padding: 10px 140px 10px 140px;
 }
 
 .personnel-container {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
   height: 50%;
   width: 100%;
 }
 
 .personnel-cards-container {
   display: flex;
-  height: 50%;
   width: 100%;
+  height: 900px;
 }
 
 .personnel-cards {
-  width: 50%;
-  height: 50%;
-  border: 1px solid black;
+  width: 700px;
+  height: 75%;
+  text-align: left;
   background-color: white;
+  margin-right: 20px;
+  padding: 30px;
+}
+
+.personnel-paragraphs {
+  color: black;
+}
+
+.personnel-title-container {
+  text-align: left;
 }
 
 .info-paragraph-container {
   display: flex;
-  justify-content: space-around;
+  position: relative;
   width: 100%;
-  height: 400px;
-  border: 1px solid black;
+  height: 200px;
+  border-bottom: 1px solid orange;
 }
+
+.info-title-container {
+  text-align: left;
+  padding-right: 160px;
+}
+
 
 .info-paragraphs {
   width: 500px;
   height: 200px;
+  color: white;
+  text-align: left;
+  margin-left: 200px;
+}
+
+.footer-image-container {
+  position: relative;
+}
+
+.footer-text {
+  position: absolute;
+  top: 10%;
+  bottom: 50%;
+  left: 35%;
+}
+
+.footer-logo-container {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 40%;
+  left: 22%;
+}
+
+.stay-updated-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: orange;
+  padding-bottom: 70px;
+}
+
+input {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  height: 50px;
+  width: 500px;
+}
+
+.signup-button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  width: 500px;
+  height: 50px;
+  background-color: orange;
+}
+
+h2 {
+  font-family: 'Alfa Slab One', serif;
+  font-size: 40px;
 }
