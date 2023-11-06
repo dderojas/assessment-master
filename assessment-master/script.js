@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  $(".header-image-container").click(function() {
-    console.log("Clicked!!!");
+  // Background Image Func
+  function backgroundImageFunc () {
 
     let currentImg = $('.active-image')
     let nextImg = currentImg.next()
@@ -16,7 +16,9 @@ $(document).ready(function() {
       currentImg.removeClass('active-image')
       prevImg.addClass('active-image')
     }
-  });
+  }
+
+  setInterval(backgroundImageFunc, 5000);
 
   // Modal Funcs
   $(".login-button").click(function(event) {

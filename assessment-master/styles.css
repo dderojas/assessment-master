@@ -9,6 +9,13 @@ body {
   color: orange;
 }
 
+h2 {
+  font-family: 'Alfa Slab One', serif;
+  font-size: 40px;
+}
+
+/* header and modal css */
+
 .partner-portal-button {
   position: absolute;
   top: 80px;
@@ -68,9 +75,17 @@ body {
 .header-image-container {
   display: flex;
   position: relative;
-  height: 20%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+.header-image-container img.active-image {
+  display: block;
+}
+
+.header-image-container img {
+  display: none;
 }
 
 .header-logo-container {
@@ -83,6 +98,8 @@ body {
 .header-logo-container img {
   display: inline-block;
 }
+
+/* Personnel and Program css */
 
 .in-partnership-container {
   display: flex;
@@ -157,6 +174,8 @@ body {
   text-align: left;
 }
 
+/* Footer Css */
+
 .footer-image-container {
   position: relative;
 }
@@ -212,10 +231,7 @@ body {
   background-color: orange;
 }
 
-h2 {
-  font-family: 'Alfa Slab One', serif;
-  font-size: 40px;
-}
+/* Mobile CSS */
 
 @media (max-width: 700px) {
   
