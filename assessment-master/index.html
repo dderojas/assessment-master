@@ -13,12 +13,24 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+    <div class="modal-background-container">
+        <div class="modal">
+            <div id="close">x</div>
+            <h2>Please Enter Your Password</h2>
+            <input type="text">
+        </div>
+    </div>
     <div class="header-image-container">
         <div class="header-logo-container">
             <img src="assets/level_up_old.svg">
         </div>
-        <button class="partner-portal-button">Partner Portal</button>
-        <img src="assets/banner_image_1.png" style="width:100%;height:20%">
+        <button class="partner-portal-button">
+            Partner Portal
+            <i class="arrow right"></i>
+        </button>
+        <button class="login-button">Log In</button>
+        <img class="slide" src="assets/banner_image_1.png" style="width:100%;height:20%">
+        <img class="slide" src="assets/banner_image_2.png" style="width:100%;height:20%">
     </div>
     <div class="in-partnership-container">
         In partnership with
@@ -102,8 +114,8 @@
     </footer>
     <footer class="stay-updated-container">
         <h2>Stay updated.</h2>
-        <input type="text">
-        <input type="text">
+        <input class="stay-updated-input" type="text">
+        <input class="stay-updated-input" type="text">
         <button class="signup-button">Sign up</button>
     </footer>
 </body>

@@ -9,16 +9,6 @@ body {
   color: orange;
 }
 
-.header-image-container {
-  position: relative;
-}
-
-.header-logo-container {
-  position: absolute;
-  top: 80px;
-  left: 80px;
-}
-
 .partner-portal-button {
   position: absolute;
   top: 80px;
@@ -26,6 +16,72 @@ body {
   background-color: orange;
   padding: 10px;
   font-weight: bold;
+}
+
+.login-button {
+  position: absolute;
+  top: 80px;
+  right: 220px;
+  background-color: orange;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.modal-background-container {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  display: none;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  flex-direction: column;
+  padding: 25px;
+  > form, div, h1 {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.header-image-container {
+  display: flex;
+  position: relative;
+  height: 20%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-logo-container {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  z-index: 100px;
+}
+
+.header-logo-container img {
+  display: inline-block;
 }
 
 .in-partnership-container {
@@ -131,7 +187,7 @@ body {
   padding-bottom: 70px;
 }
 
-input {
+.stay-updated-input {
   display: block;
   margin: auto;
   margin-top: 10px;
