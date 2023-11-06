@@ -5,11 +5,12 @@ $(document).ready(function() {
 
     let currentImg = $('.active-image')
     let nextImg = currentImg.next()
-    console.log(nextImg.length, 'next imageeeee')
+
     if (nextImg.length) {
 
       currentImg.removeClass('active-image')
       nextImg.addClass('active-image')
+      
     } else {
       let prevImg = currentImg.prev()
 
@@ -22,13 +23,11 @@ $(document).ready(function() {
 
   // Modal Funcs
   $(".login-button").click(function(event) {
-    console.log(event.target.nodeName, 'event???/')
-
     $(".modal-background-container").css("display", "flex")
     $(".modal").css("display", "flex")
   })
 
-  $("#close").click(function() {
+  $("#close-modal").click(function() {
     $(".modal").css("display", "none")
     $(".modal-background-container").css("display", "none")
   })
