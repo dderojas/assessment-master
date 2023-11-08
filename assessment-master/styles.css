@@ -70,7 +70,7 @@ p {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   flex-direction: column;
   padding: 25px;
-  > h1 {
+  > h1 form {
     text-align: center;
     margin-top: 10px;
   }

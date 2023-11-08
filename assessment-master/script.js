@@ -38,4 +38,21 @@ $(document).ready(function() {
       $(".modal-background-container").css("display", "none")
     }
   });
+
+  $("#signInButton").click(function(e) {
+    e.preventDefault()
+    console.log('SIGN INNNNN')
+
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:3000",
+      dataType: "json",
+      CORS: true,
+      contentType:'application/json',
+      secure: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    })
+  })
 })
