@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors')
 
@@ -5,9 +6,9 @@ const app = express();
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-
-console.log('did I make it?????')
+app.post('/signin', (req, res) => {
+  console.log('did I make it?????')
+  console.log(req.body, 'body?????')
   res.send('hi');
 })
 

@@ -41,11 +41,13 @@ $(document).ready(function() {
 
   $("#signInButton").click(function(e) {
     e.preventDefault()
+    const password = $("#password").val();
+    console.log(password, 'pass??/')
     console.log('SIGN INNNNN')
 
     $.ajax({
-      type: "GET",
-      url: "http://localhost:3000",
+      type: "POST",
+      url: "http://localhost:3000/signin",
       dataType: "json",
       CORS: true,
       contentType:'application/json',
@@ -53,6 +55,7 @@ $(document).ready(function() {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
+      data: { password }
     })
   })
 })
