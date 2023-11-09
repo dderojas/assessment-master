@@ -52,4 +52,4 @@ Thumbs.db
 *.env
 
 # Config Files
-package-lock.json
+package-lock.json/
