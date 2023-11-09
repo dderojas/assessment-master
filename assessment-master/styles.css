@@ -29,15 +29,6 @@ p {
   font-weight: bold;
 }
 
-.login-button {
-  position: absolute;
-  top: 80px;
-  right: 220px;
-  background-color: orange;
-  padding: 10px;
-  font-weight: bold;
-}
-
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -258,7 +249,7 @@ p {
   width: 500px;
 }
 
-.signup-button {
+.signup-btn {
   display: block;
   margin: auto;
   margin-top: 10px;

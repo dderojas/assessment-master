@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   // Background Image Func
   function backgroundImageFunc () {
 
@@ -22,7 +21,7 @@ $(document).ready(function() {
   setInterval(backgroundImageFunc, 5000);
 
   // Modal Funcs
-  $(".login-button").click(function(event) {
+  $(".partner-portal-button").click(function(event) {
     $(".modal-background-container").css("display", "flex")
     $(".modal").css("display", "flex")
   })
@@ -39,10 +38,12 @@ $(document).ready(function() {
     }
   });
 
-  $("#signInButton").click(function(e) {
+  $("#sign-in-btn").click(function(e) {
     e.preventDefault()
-    const password = $("#password").val();
-    console.log(password, 'pass??/')
+    const parentEmail = $("#parent-email").val();
+    const parentPassword = $("#parent-password").val();
+    console.log(parentPassword, 'pass??/')
+    console.log(parentEmail, 'email???/')
     console.log('SIGN INNNNN')
 
     $.ajax({
@@ -55,7 +56,26 @@ $(document).ready(function() {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      data: { password }
+      data: JSON.stringify({ email: parentEmail, password: parentPassword })
+    })
+  })
+
+  $(".signup-btn").click(function(e) {
+    const name = $("#name").val();
+    const email = $("#email").val();
+    const password = $("#password").val();
+
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:3000/stayUpdated",
+      dataType: "json",
+      CORS: true,
+      contentType:'application/json',
+      secure: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+      data: JSON.stringify({ name, email, password })
     })
   })
 })
