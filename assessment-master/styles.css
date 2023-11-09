@@ -27,6 +27,7 @@ p {
   background-color: orange;
   padding: 10px;
   font-weight: bold;
+  z-index: 1;
 }
 
 .arrow {
@@ -75,24 +76,36 @@ p {
 .header-image-container {
   display: flex;
   position: relative;
-  height: 100%;
+  height: 700px;
   width: 100%;
   overflow: hidden;
 }
 
-.header-image-container img.active-image {
-  display: block;
+.test {
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
-.header-image-container img {
-  display: none;
+#banner_image_1 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: -1510px;
+}
+
+#banner_image_2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: -1510px;
 }
 
 .header-logo-container {
   position: absolute;
   top: 80px;
   left: 80px;
-  z-index: 100px;
+  z-index: 1;
 }
 
 .header-logo-container img {

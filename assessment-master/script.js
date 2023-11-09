@@ -2,20 +2,28 @@ $(document).ready(function() {
   // Background Image Func
   function backgroundImageFunc () {
 
-    let currentImg = $('.active-image')
-    let nextImg = currentImg.next()
+      $('.first-banner').animate({'left': 0});
+      $('.second-banner').animate({'left': 0});
 
-    if (nextImg.length) {
+      function delay (time) {
+        return new Promise(resolve => setTimeout(resolve, time))
+      }
 
-      currentImg.removeClass('active-image')
-      nextImg.addClass('active-image')
-      
-    } else {
-      let prevImg = currentImg.prev()
 
-      currentImg.removeClass('active-image')
-      prevImg.addClass('active-image')
-    }
+      delay(1000).then(() => {
+        let something = $('.first-banner').remove()
+        $('.second-banner').css('left', -1510)
+        
+        $(something).removeClass('first-banner')
+        $(something).addClass('second-banner')
+        $(something).css('left', -1510)
+
+        $('.second-banner').addClass('first-banner')
+        $('.first-banner').removeClass('second-banner')
+  
+        $('.test').prepend(something);
+      })
+
   }
 
   setInterval(backgroundImageFunc, 5000);
