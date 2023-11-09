@@ -54,23 +54,41 @@ p {
 }
 
 .modal {
-  display: none;
-  width: 500px;
-  height: 500px;
-  border-radius: 12px;
-  background-color: #696969	;
+  display: flex;
+  width: 660px;
+  height: 650px;
+  background-color: #f9f9f9;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   flex-direction: column;
   padding: 25px;
-  > h1 form {
-    text-align: center;
-    margin-top: 10px;
+  > h1, form {
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    > input {
+      height: 50px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border-width: medium;
+    }
+    > button {
+      height: 50px;
+      background-color: orange;
+      border-radius: 10px;
+      font-weight: bold;
+      border: none;
+    }
+  };
+  > p {
+    color: black;
   }
 }
 
 #close-modal {
   text-align: left;
-  color: white;
+  font-size: 25px;
+  color: orange;
 }
 
 .header-image-container {
