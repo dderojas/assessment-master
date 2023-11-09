@@ -44,7 +44,6 @@ $(document).ready(function() {
     const parentPassword = $("#parent-password").val();
     console.log(parentPassword, 'pass??/')
     console.log(parentEmail, 'email???/')
-    console.log('SIGN INNNNN')
 
     fetch('http://localhost:3000/signin', { 
       method: 'POST',
