@@ -46,18 +46,19 @@ $(document).ready(function() {
     console.log(parentEmail, 'email???/')
     console.log('SIGN INNNNN')
 
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:3000/signin",
-      dataType: "json",
-      CORS: true,
-      contentType:'application/json',
-      secure: true,
+    fetch('http://localhost:3000/signin', { 
+      method: 'POST',
+      mode: 'cors',
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
       },
-      data: JSON.stringify({ email: parentEmail, password: parentPassword })
+      body: JSON.stringify({ email: parentEmail, password: parentPassword })
+    }).then((res) => {
+      return res.json()
+    }).then((data) => {
+      console.log(data, 'data????')
     })
+
   })
 
   $(".signup-btn").click(function(e) {
