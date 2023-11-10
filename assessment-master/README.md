@@ -42,3 +42,12 @@ You have until your deadline to complete however much of the following you can:
 #### Questions? ####
 
 If you have any questions about what is being asked of you for this project, please contact us before the due date.
+
+
+## How to run app ##
+
+* cd into assessment-master/assessment-master
+* run npm i
+* run npm start to run server
+* open index.html in the browser
+* env files should have aws access keys and credentials to access dynamodb
