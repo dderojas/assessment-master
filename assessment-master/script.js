@@ -1,10 +1,9 @@
 $(document).ready(function() {
-  
   // Background Image Func
   function backgroundImageFunc () {
 
-      $('.first-banner').animate({'left': 0});
-      $('.second-banner').animate({'left': 0});
+      $('.first-banner').animate({'left': '100%'});
+      $('.second-banner').animate({'left': '0%'});
 
       function delay (time) {
         return new Promise(resolve => setTimeout(resolve, time))
@@ -13,11 +12,11 @@ $(document).ready(function() {
       // delay to allow animation to complete
       delay(1000).then(() => {
         let something = $('.first-banner').remove()
-        $('.second-banner').css('left', -1510)
+        $('.second-banner').css('left', '-100%')
         
         $(something).removeClass('first-banner')
         $(something).addClass('second-banner')
-        $(something).css('left', -1510)
+        $(something).css('left', '-100%')
 
         $('.second-banner').addClass('first-banner')
         $('.first-banner').removeClass('second-banner')
@@ -61,11 +60,15 @@ $(document).ready(function() {
       body: JSON.stringify({ email: parentEmail, password: parentPassword })
     }
 
-    const results = await fetch('http://localhost:3000/signin', config)
-    const data = await results.json()
-    
-    if(data.success) {
-        window.location.replace('parent-portal.html')
+    try {
+      const results = await fetch('http://localhost:3000/signin', config)
+      const data = await results.json()
+      
+      if(data.success) {
+          window.location.replace('parent-portal.html')
+      }
+    } catch(e) {
+      console.error(e, 'bad credentials')
     }
   })
 
@@ -83,7 +86,17 @@ $(document).ready(function() {
       body: JSON.stringify({ name, email, password })
     }
 
-    const results = await fetch('http://localhost:3000/stayUpdated', config)
-    const data = await results.json()
+    $("#name").val('');
+    $("#email").val('');
+    $("#password").val('');
+
+
+    try {
+      const results = await fetch('http://localhost:3000/stayUpdated', config)
+      const data = await results.json()
+      console.log('account created!')
+    } catch(e) {
+      console.error('bad credentials')
+    }
   })
 })

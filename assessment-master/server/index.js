@@ -23,7 +23,6 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.post('/signin', async (req, res) => {
-  console.log('in signin!!!!', req.body)
 
   const { email, password } = req.body;
 
@@ -36,7 +35,6 @@ app.post('/signin', async (req, res) => {
   }
 
   const results = await docClient.query(payload).promise();
-  console.log(results, 'results???')
 
   if (results.Items.length === 0) {
     return res.status(400).send('no user')
@@ -54,7 +52,6 @@ app.post('/signin', async (req, res) => {
 })
 
 app.post('/stayUpdated', async (req, res) => {
-  console.log('in stayUpdated!!!', req.body)
   const { name , email: Email, password } = req.body;
 
   const salt = await bcrypt.genSalt()
