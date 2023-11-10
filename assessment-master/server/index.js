@@ -46,7 +46,7 @@ app.post('/signin', async (req, res) => {
     if (await bcrypt.compare(password, results.Items[0].hashPassword)) {
       res.send({ success: 'sucesssssss' })
     } else {
-      res.send('no correct')
+      res.send({ failed: 'wrong credentials'})
     }
   } catch(e) {
     res.status(500).send()
@@ -55,7 +55,7 @@ app.post('/signin', async (req, res) => {
 
 app.post('/stayUpdated', async (req, res) => {
   console.log('in stayUpdated!!!', req.body)
-  const { name , email, password } = req.body;
+  const { name , email: Email, password } = req.body;
 
   const salt = await bcrypt.genSalt()
   const hashPassword = await bcrypt.hash(password, salt)
@@ -64,7 +64,7 @@ app.post('/stayUpdated', async (req, res) => {
     TableName : 'parent-users',
     Item: {
        name,
-       Email: email,
+       Email,
        hashPassword
     }
   }

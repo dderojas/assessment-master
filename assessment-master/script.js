@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
   // Background Image Func
   function backgroundImageFunc () {
 
@@ -9,7 +10,7 @@ $(document).ready(function() {
         return new Promise(resolve => setTimeout(resolve, time))
       }
 
-
+      // delay to allow animation to complete
       delay(1000).then(() => {
         let something = $('.first-banner').remove()
         $('.second-banner').css('left', -1510)
@@ -46,44 +47,43 @@ $(document).ready(function() {
     }
   });
 
-  $("#sign-in-btn").click(function(e) {
+  $("#sign-in-btn").click(async function(e) {
     e.preventDefault()
     const parentEmail = $("#parent-email").val();
     const parentPassword = $("#parent-password").val();
-    console.log(parentPassword, 'pass??/')
-    console.log(parentEmail, 'email???/')
 
-    fetch('http://localhost:3000/signin', { 
+    const config = {
       method: 'POST',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ email: parentEmail, password: parentPassword })
-    }).then((res) => {
-      return res.json()
-    }).then((data) => {
-      console.log(data, 'data????')
-    })
+    }
 
+    const results = await fetch('http://localhost:3000/signin', config)
+    const data = await results.json()
+    
+    if(data.success) {
+        window.location.replace('parent-portal.html')
+    }
   })
 
-  $(".signup-btn").click(function(e) {
+  $(".signup-btn").click(async function(e) {
     const name = $("#name").val();
     const email = $("#email").val();
     const password = $("#password").val();
 
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:3000/stayUpdated",
-      dataType: "json",
-      CORS: true,
-      contentType:'application/json',
-      secure: true,
+    const config = {
+      method: 'POST',
+      mode: 'cors',
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
       },
-      data: JSON.stringify({ name, email, password })
-    })
+      body: JSON.stringify({ name, email, password })
+    }
+
+    const results = await fetch('http://localhost:3000/stayUpdated', config)
+    const data = await results.json()
   })
 })

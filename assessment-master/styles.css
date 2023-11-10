@@ -68,6 +68,7 @@ p {
     > input {
       height: 50px;
       margin-bottom: 20px;
+      padding: 25px;
       font-size: 20px;
       font-weight: bold;
       border-width: medium;
@@ -276,17 +277,24 @@ p {
   display: block;
   margin: auto;
   margin-top: 10px;
+  padding: 30px;
   height: 50px;
   width: 500px;
+  font-size: 20px;
+  font-weight: bold;
+  border-width: medium;
 }
 
 .signup-btn {
   display: block;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 30px;
   width: 500px;
   height: 50px;
   background-color: orange;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /* Mobile CSS */
